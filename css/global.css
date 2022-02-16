@@ -57,3 +57,24 @@ ul.list li:nth-child(5) input[type="button"]{
     box-shadow: 0 0 10px 0 #000;
     margin: auto;
 }
+
+.nav {
+    width: 500px;
+    height: auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #000;
+    margin: auto auto 50px auto;
+}
+
+.nav-item {
+    font-weight: bold;
+    list-style-type: none;
+    float: left;
+}
+
+.nav-link {
+    padding: 8px;
+    color: black;
+}
