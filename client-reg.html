@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script src="script.js"></script>
+    <title>Client Registration</title>
+    <script defer src="validateReg.js"></script>
     <link rel='stylesheet' type="text/css" href="../css/global.css">
 </head>
 <div>
@@ -21,7 +21,20 @@
 </div>
 <body>
     <div>
-        <h2>Home</h2>
+        <h2>Client Registration</h2>
     </div>
+    </div>
+    <div id="error"></div>
+    <form class="form" id="form" action="/client-reg.html" method="GET">
+        <div>
+            <label class="label" for="username">Username</label>
+            <input id="username" name="username" type="text" minlength="6" required>
+        </div>
+        <div>
+            <label class="label" for="password">Password</label>
+            <input id="password" name="password" type="password" minglength="8" required>
+        </div>
+        <button style="align-self: center;" type="submit">Submit</button>
+    </form>
 </body>
 </html>
