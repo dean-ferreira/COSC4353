@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuel Quote</title>
     <link rel='stylesheet' type="text/css" href="../css/global.css">
+    <script defer src="fuel-quote-module.js"></script>
 </head>
 <div>
     <nav class="nav main-nav">
@@ -24,26 +25,26 @@
     </div>
     <div id="error"></div>
     
-    <form class="form" action="/" method="GET">
+    <form class="form" id='form' action="fuel-quote.html" method="GET">
         <div>
             <label class="label" for="gallons">Amount in Gallons</label>
             <input type="number" id="gallons" name="gallons" placeholder="Amount in Gallons">
         </div>
         <div>
             <label class="label" for="shipping-address">Shipping Address</label>
-            <p style="font-style: italic;">Client's Address Here.</p>
+            <p style="font-style: italic;" id="address">Client's Address Here.</p>
         </div>
         <div>
             <label class="label" for="delivery-date">Choose your delivery date</label>
-            <input type="date" name="delivery-date">
+            <input type="date" id="dd" name="delivery-date">
         </div>
         <div>
             <label class="label" for="ppg">Price per Gallon</label>
-            <p style="font-style: italic;">Current Market Price Here.</p>
+            <p style="font-style: italic;" id="ppg">Current Market Price Here.</p>
         </div>
         <div>
             <label class="label" for="total">Total Amount Due</label>
-            <p style="font-style: italic;">Calculated Total Here.</p>
+            <p style="font-style: italic;" id="total">Calculated Total Here.</p>
         </div>
         <button style="align-self: center;" type="submit">Place Order</button>
     </form>
