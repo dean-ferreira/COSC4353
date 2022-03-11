@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration</title>
+    <script defer src="validateReg.js"></script>
+    <link rel='stylesheet' type="text/css" href="../css/global.css">
+</head>
+<div>
+    <nav class="nav main-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="fuel-quote.html">Fuel Quote</a></li>
+            <li><a href="fuel-quote-history.html">Quote History</a></li>
+            <li><a href="profile-mgmt.html">Manage Profile</a></li>
+        </ul>
+    </nav>
+</div>
+<body>
+    <div>
+        <h2>Client Registration</h2>
+    </div>
+    </div>
+    <div id="error"></div>
+    <form class="form" id="form" action="/client-reg.html" method="GET">
+        <div>
+            <label class="label" for="username">Username</label>
+            <input id="username" name="username" type="text" minlength="6" required>
+        </div>
+        <div>
+            <label class="label" for="password">Password</label>
+            <input id="password" name="password" type="password" minglength="8" required>
+        </div>
+        <button style="align-self: center;" type="submit">Submit</button>
+    </form>
+</body>
+</html>
