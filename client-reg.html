@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Registration</title>
-    <script defer src="validateReg.js"></script>
     <link rel='stylesheet' type="text/css" href="../css/global.css">
 </head>
 <div>
@@ -25,16 +24,18 @@
     </div>
     </div>
     <div id="error"></div>
-    <form class="form" id="form" action="/client-reg.html" method="GET">
+    <form class="form" id="form" action="/client-reg.html">
+        <p style="text-align: center;">Already have an account? <a href="login.html">Sign in</a></p>
         <div>
-            <label class="label" for="username">Username</label>
-            <input id="username" name="username" type="text" minlength="6" required>
+            <label class="label" for="newUsername">Username</label>
+            <input id="newUsername" name="newUsername" type="text" required>
         </div>
         <div>
-            <label class="label" for="password">Password</label>
-            <input id="password" name="password" type="password" minglength="8" required>
+            <label class="label" for="newPassword">Password</label>
+            <input id="newPassword" name="newPassword" type="password" required>
         </div>
-        <button style="align-self: center;" type="submit">Submit</button>
+        <button style="align-self: center;" type="button" onclick="registerUser()">Register</button>
     </form>
+    <script src="userFunctions/login-register.js"></script>
 </body>
 </html>
