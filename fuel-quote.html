@@ -28,11 +28,11 @@
     <form class="form" id='form' action="fuel-quote.html" method="GET">
         <div>
             <label class="label" for="gallons">Amount in Gallons</label>
-            <input type="number" id="gallons" name="gallons" placeholder="Amount in Gallons">
+            <input type="number" id="gallons" name="gallons" placeholder="Amount in Gallons" onchange="calculate()">
         </div>
         <div>
             <label class="label" for="shipping-address">Shipping Address</label>
-            <p style="font-style: italic;" id="address">Client's Address Here.</p>
+            <p style="font-style: italic;" id="address"></p>
         </div>
         <div>
             <label class="label" for="delivery-date">Choose your delivery date</label>
@@ -40,7 +40,7 @@
         </div>
         <div>
             <label class="label" for="ppg">Price per Gallon</label>
-            <p style="font-style: italic;" id="ppg">Current Market Price Here.</p>
+            <p style="font-style: italic;" id="price">Current Market Price Here.</p>
         </div>
         <div>
             <label class="label" for="total">Total Amount Due</label>
@@ -48,5 +48,6 @@
         </div>
         <button style="align-self: center;" type="submit">Place Order</button>
     </form>
+    <script src="fuel-quote-module"></script>
 </body>
 </html>
