@@ -24,14 +24,14 @@
     </div>
     <div id="error"></div>
     
-    <form class="form" action="/" method="GET">
+    <form class="form">
         <div>
             <label class="label" for="gallons">Amount in Gallons</label>
-            <input type="number" id="gallons" name="gallons" placeholder="Amount in Gallons">
+            <input type="number" id="gallons" name="gallons" placeholder="Amount in Gallons" onchange="calcTotal()">
         </div>
         <div>
             <label class="label" for="shipping-address">Shipping Address</label>
-            <p style="font-style: italic;">Client's Address Here.</p>
+            <p id="shipping-address"></p>
         </div>
         <div>
             <label class="label" for="delivery-date">Choose your delivery date</label>
@@ -39,13 +39,14 @@
         </div>
         <div>
             <label class="label" for="ppg">Price per Gallon</label>
-            <p style="font-style: italic;">Current Market Price</p>
+            <p id="price"></p>
         </div>
         <div>
             <label class="label" for="total">Total Amount Due</label>
-            <p style="font-style: italic;">Calculated Total Here.</p>
+            <p id="total">Calculated Total Here.</p>
         </div>
-        <button style="align-self: center;" type="submit">Place Order</button>
+        <button style="align-self: center;" type="button">Place Order</button>
     </form>
+    <script src="fuel-quote.js"></script>
 </body>
 </html>
