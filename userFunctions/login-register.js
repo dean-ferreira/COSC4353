@@ -46,6 +46,9 @@ function registerUser() {
         if (registerUsername == objUser[i].username) {
             alert("Username is already taken.")
             return
+        } else if (registerUsername.length < 6) {
+            alert("Username must be at least 6 characters.")
+            return
         } else if (registerPassword.length < 8) {
             alert("Password must be at least 8 characters.")
             return
