@@ -27,13 +27,18 @@ const marketPrice = 4.15
 document.getElementById('shipping-address').innerHTML = clientAddress
 document.getElementById('price').innerHTML = marketPrice
 
+function roundToTwo(num) {
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+
 function calcTotal() {
     const gallons = document.getElementsByName('gallons')[0].value
     if (gallons == null || gallons == '') {
         alert("Please enter the amount in Gallons")
         return
     }
-    const totalDue = gallons * marketPrice
+    var totalDue = gallons * marketPrice
+    totalDue = roundToTwo(totalDue)
     document.getElementById('total').innerHTML = totalDue
 }
 
@@ -77,8 +82,9 @@ function placeOrder() {
     var newGallons = parseInt(document.getElementById('gallons').value)
     var newAddress = clientAddress
     var newDeliveryDate = String(document.getElementById('delivery-date').value)
-    var newMarketPrice = parseInt(marketPrice)
-    var newTotal = (newGallons * newMarketPrice).toFixed(2)
+    var newMarketPrice = parseFloat(marketPrice)
+    var newTotal = newGallons * newMarketPrice
+    newTotal = roundToTwo(newTotal)
 
    if (isNaN(newGallons)) {
         alert("Please enter the amount in Gallons")
