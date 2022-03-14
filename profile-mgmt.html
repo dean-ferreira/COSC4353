@@ -13,7 +13,6 @@
             <li><a href="/">Home</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="fuel-quote.html">Fuel Quote</a></li>
-            <li><a href="fuel-quote-history.html">Quote History</a></li>
             <li><a href="profile-mgmt.html">Manage Profile</a></li>
         </ul>
     </nav>
@@ -23,11 +22,10 @@
         <h2>Profile Management</h2>
     </div>
     <div id="error"></div>
-    
-    <form class="form" action="profile-mgmt.html" method="GET">
+    <form class="form" >
         <div>
             <label class="label" for="fullname">Full Name</label>
-            <input id="fullname" name="fullname" type="text">
+            <input id="fullname" name="fullname" type="text" autofocus>
         </div>
         <div>
             <label class="label" for="address_1">Primary Address</label>
@@ -100,7 +98,8 @@
             <label class="label" for="zipcode">Zipcode</label>
             <input id="zipcode" name="zipcode" type="text" minlength="5" maxlength="9">
         </div>
-        <button style="align-self: center;" type="submit">Submit Changes</button>
+        <button style="align-self: center;" type="button" onclick="editProfile()">Submit Changes</button>
     </form>
+    <script src="userFunctions/editProfile.js"></script>
 </body>
 </html>

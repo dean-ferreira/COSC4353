@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <script defer src="script.js"></script>
     <link rel='stylesheet' type="text/css" href="css/global.css">
 </head>
 <div>
@@ -14,7 +13,6 @@
             <li><a href="/">Home</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="fuel-quote.html">Fuel Quote</a></li>
-            <li><a href="fuel-quote-history.html">Quote History</a></li>
             <li><a href="profile-mgmt.html">Manage Profile</a></li>
         </ul>
     </nav>
@@ -25,17 +23,18 @@
     </div>
     <div id="error"></div>
     
-    <form class="form" action="/" method="GET">
+    <form class="form">
         <p style="text-align: center;">New User? Click <a href="client-reg.html">here</a> to register.</p>
         <div>
             <label class="label" for="username">Username</label>
-            <input id="username" name="username" type="text">
+            <input id="username" name="username" type="text" autofocus>
         </div>
         <div>
             <label class="label" for="password">Password</label>
             <input id="password" name="password" type="password">
         </div>
-        <button style="align-self: center;" type="submit">Log In</button>
+        <button style="align-self: center;" type="button" onclick="login()">Log In</button>
     </form>
+    <script src="userFunctions/login-register.js"></script>
 </body>
 </html>
