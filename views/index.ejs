@@ -1,0 +1,10 @@
+<h2>Recently Ordered</h2>
+<div>
+  <% quotes.forEach(quote => { %>
+    <a href="/quotes/<%= quote.id %>">
+      <div>
+        <%= quote.deliveryDate.toISOString().split('T')[0] %>
+    </div>
+    </a>
+  <% }) %>
+</div>
