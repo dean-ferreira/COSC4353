@@ -1,0 +1,41 @@
+<div>
+  <label>User</label>
+  <select name="user">
+  <% users.forEach(user => { %>
+    <% if (user.id === quote.user) { %>
+      <option selected label="<%= user.username %>" value="<%= user.id %>">
+    <% } else { %>
+      <option label="<%= user.username %>" value="<%= user.id %>">
+    <% } %>
+  <% }) %>
+  </select>
+</div><div>
+    <label>Amount in Gallons</label>
+    <input type="number" name="gallons" value="<%= quote.gallons %>">
+  </div>
+  <div>
+    <label>Shipping Address</label>
+    <select name="shippingAddress">
+    <% users.forEach(user => { %>
+      <% if (user.id === quote.user) { %>
+        <option selected label="<%= user.shippingAddress %>" value="<%= user.shippingAddress %>">
+      <% } else { %>
+        <option label="<%= user.shippingAddress %>" value="<%= user.shippingAddress %>">
+      <% } %>
+    <% }) %>
+    </select>
+  </div>
+  <div>
+    <label>Delivery Date</label>
+    <input type="date" name="deliveryDate"
+          value="<%= quote.deliveryDate == null ? '' : quote.deliveryDate.toISOString().split('T')[0] %>">
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" name="price" min="1" value="<%= quote.price %>">
+  </div>
+  </div>
+  <div>
+    <label>Total Due</label>
+    <input type="number" name="totalDue">
+  </div>
