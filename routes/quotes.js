@@ -2,28 +2,29 @@ const express = require('express')
 const router = express.Router()
 const Quote = require('../models/quote')
 const User = require('../models/user')
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth-config')
 
 // All Quote Route
-router.get('/', async (req, res) => {
-    try {
-        const quotes = await Quote.find({})
-        res.render('quotes/index', {
-            quotes: quotes
-        })
-    } catch {
-        res.redirect('/')
-    }
-})
+// router.get('/', async (req, res) => {
+//     try {
+//         const quotes = await Quote.find({})
+//         res.render('quotes/index', {
+//             quotes: quotes
+//         })
+//     } catch {
+//         res.redirect('/')
+//     }
+// })
 
 // New Quote Route
-router.get('/new', async (req, res) => {
+router.get('/new', ensureAuthenticated, async (req, res) => {
     renderNewPage(res, new Quote())
 })
 
 // Create Quote Route
 router.post('/', async (req, res) => {
     const quote = new Quote({
-        user: req.body.user,
+        user: req.user.id,
         gallons: req.body.gallons,
         shippingAddress: req.body.shippingAddress,
         deliveryDate: new Date(req.body.deliveryDate),
@@ -33,14 +34,14 @@ router.post('/', async (req, res) => {
     try {
         const newQuote = await quote.save()
         // res.redirect(`quotes/${newQuote.id}`)
-        res.redirect('quotes')
+        res.redirect('/dashboard')
     } catch {
         renderNewPage(res, quote, true)
     }
 })
 
 // Show Quote Route
-router.get('/:id', async (req, res) => {
+router.get('/:id', ensureAuthenticated, async (req, res) => {
     try {
         const quote = await Quote.findById(req.params.id).populate('user').exec()
         res.render('quotes/show', { quote: quote })
