@@ -1,0 +1,18 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.fullName %></p>
+<a href="/quotes/new">New Quote</a>
+<a href="/users/<%= user.id %>">View Profile</a>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+<% if (quotes.length > 0) { %>
+  <h2>Recently Ordered</h2>
+  <% quotes.forEach(quote => { %>
+    <div>
+        <a href="/quotes/<%= quote.id %>">
+          <div>
+            <%= quote.deliveryDate.toISOString().split('T')[0] %>
+        </div>
+        </a>
+    </div>
+  <% }) %>
+<% } %>

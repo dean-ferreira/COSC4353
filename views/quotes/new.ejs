@@ -1,0 +1,39 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">New Quote</h1>
+      <%= include ("../partials/messages") %>
+      <form action="/quotes" method="POST">
+        <div class="form-group">
+          <label for="gallons">Amount in Gallons</label>
+          <input type="number" id="gallons" name="gallons" class="form-control" value="<%= quote.gallons %>">
+        </div>
+        <div class="form-group">
+          <label for="shippingAddress">Shipping Address</label>
+          <select name="shippingAddress" class="form-control">
+            <% users.forEach(user => { %>
+              <% if (user.id === quote.user) { %>
+                <option selected label="<%= user.shippingAddress %>" value="<%= user.shippingAddress %>">
+              <% } else { %>
+                <option label="<%= user.shippingAddress %>" value="<%= user.shippingAddress %>">
+              <% } %>
+            <% }) %>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="deliveryDate">Delivery Date</label>
+          <input type="date" id="deliveryDate" name="deliveryDate" class="form-control" value="<%= quote.deliveryDate == null ? '' : quote.deliveryDate.toISOString().split('T')[0] %>">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" id="price" name="price" min="1" class="form-control" value="<%= quote.price %>">
+        </div>
+        <div class="form-group">
+          <label for="totalDue">Total Due</label>
+          <input type="number" id="totalDue" name="totalDue" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+      </form>
+    </div>
+  </div>
+</div>
