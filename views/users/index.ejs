@@ -1,0 +1,10 @@
+<h2>All Users</h2>
+<% users.forEach(user => { %>
+  <div>
+      <%= user.username %>
+      <%= user.password %>
+  </div>
+  <a href="/users/<%= user.id %>">View</a>
+  <a href="/users/<%= user.id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm', { url: `/users/${user.id}` }) %>
+<% }) %>

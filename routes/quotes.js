@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Quote = require('../models/quote')
 const User = require('../models/user')
+<<<<<<< HEAD
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth-config')
 
 // All Quote Route
@@ -18,13 +19,34 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth-co
 
 // New Quote Route
 router.get('/new', ensureAuthenticated, async (req, res) => {
+=======
+
+// All Quote Route
+router.get('/', async (req, res) => {
+    try {
+        const quotes = await Quote.find({})
+        res.render('quotes/index', {
+            quotes: quotes
+        })
+    } catch {
+        res.redirect('/')
+    }
+})
+
+// New Quote Route
+router.get('/new', async (req, res) => {
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0
     renderNewPage(res, new Quote())
 })
 
 // Create Quote Route
 router.post('/', async (req, res) => {
     const quote = new Quote({
+<<<<<<< HEAD
         user: req.user.id,
+=======
+        user: req.body.user,
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0
         gallons: req.body.gallons,
         shippingAddress: req.body.shippingAddress,
         deliveryDate: new Date(req.body.deliveryDate),
@@ -34,14 +56,22 @@ router.post('/', async (req, res) => {
     try {
         const newQuote = await quote.save()
         // res.redirect(`quotes/${newQuote.id}`)
+<<<<<<< HEAD
         res.redirect('/dashboard')
+=======
+        res.redirect('quotes')
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0
     } catch {
         renderNewPage(res, quote, true)
     }
 })
 
 // Show Quote Route
+<<<<<<< HEAD
 router.get('/:id', ensureAuthenticated, async (req, res) => {
+=======
+router.get('/:id', async (req, res) => {
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0
     try {
         const quote = await Quote.findById(req.params.id).populate('user').exec()
         res.render('quotes/show', { quote: quote })

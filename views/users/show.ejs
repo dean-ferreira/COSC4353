@@ -5,7 +5,13 @@
 <div>City: <%= user.city %></div>
 <div>State: <%= user.state %></div>
 <div>Zipcode: <%= user.zipcode %></div>
+<<<<<<< HEAD
 <a href="/users/<%= user.id %>/edit">Edit Details</a>
+=======
+<a href="/users/<%= user.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm',
+            { url: `/users/${user.id}` }) %>
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0
 <% if (quotesByUser.length > 0) { %>
   <h2>Quotes By User</h2>
   <% quotesByUser.forEach(quote => { %>

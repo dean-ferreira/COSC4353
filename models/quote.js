@@ -29,7 +29,11 @@ const quoteSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
+<<<<<<< HEAD
         ref: 'User'
+=======
+        ref: ''
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0
     }
 })
 

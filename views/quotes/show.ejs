@@ -3,4 +3,11 @@
 <div>Shipping Address: <%= quote.shippingAddress %></div>
 <div>Delivery Date: <%= quote.deliveryDate.toDateString() %></div>
 <div>Price per Gallon: <%= quote.price %></div>
+<<<<<<< HEAD
 <div>Total Amount Due: <%= quote.totalDue %></div>
+=======
+<div>Total Amount Due: <%= quote.totalDue %></div>
+
+<%- include('../partials/deleteForm', { url: `/quotes/${quote.id}` }) %>
+<a href="/users/<%= quote.user.id %>">View User</a>
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0

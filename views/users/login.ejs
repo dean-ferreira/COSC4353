@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
@@ -18,3 +19,21 @@
     </div>
   </div>
 </div>
+=======
+<h2>Login</h2>
+<% if (messages.error) { %>
+  <%= messages.error %>
+<% } %>
+<form action="/users/login" method="POST">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" name="username" required>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" required>
+  </div>
+  <button type="submit">Login</button>
+</form>
+<a href="/users/new">Register</a>
+>>>>>>> 5d573747b35512a272ccedc9598e2078f4750dd0
